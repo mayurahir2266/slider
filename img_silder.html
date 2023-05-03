@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>First Slider</title>
+	<style type="text/css">
+		
+		.p{
+			position: absolute;
+			top: 31%;
+			left: 25px;
+			border-radius: 50px;
+			height: 50px;
+			width: 50px;
+			font-size: 30px;
+			background-color: #cdcfc2;
+		}		
+
+		.n{
+			position: absolute;
+			top: 31%;
+			right: 25px;
+			border-radius: 50px;
+			height: 50px;
+			width: 50px;
+			font-size: 30px;
+			background-color: #cdcfc2;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		
+		temp = 0;
+		function slider()
+		{
+			var img = document.getElementsByClassName('img');
+
+			for (var i = 0; i < img.length; i++) {
+				img[i].style.display = "none";
+			}
+				img[temp].style.display = "block";
+
+		lenth1 = img.length;
+
+		}
+
+		function pre()
+		{
+			if (temp == 0) 
+			{
+				temp = lenth1;
+			}
+			temp--;
+			slider();
+		}
+
+		function next()
+		{
+			if (temp == (lenth1-1))
+			{
+				temp = -1;
+			}
+			temp++;
+			slider();
+		}
+
+		window.onload = function()
+		{
+			slider();
+		}
+
+
+
+	</script>
+
+</head>
+<body>
+
+	<img src="image/1.webp" width="100%" height="600px" onclick="Slider()" class="img">
+	<img src="image/2.webp" width="100%" height="600px" onclick="Slider()" class="img">
+	<img src="image/3.webp" width="100%" height="600px" onclick="Slider()" class="img">
+	<img src="image/4.webp" width="100%" height="600px" onclick="Slider()" class="img">
+	<img src="image/5.webp" width="100%" height="600px" onclick="Slider()" class="img">
+
+	<input type="button" name="" value="<" onclick="pre()" class="p">
+	<input type="button" name="" value=">" onclick="next()" class="n">
+
+</body>
+</html>
